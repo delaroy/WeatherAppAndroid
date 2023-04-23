@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="search">Search</string>
+    <string name="city_name">City name</string>
+    <string name="search_a_city">SEARCH A CITY</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
+    <string name="search_a_location">SEARCH A LOCATION</string>
+    <string name="choose_a_city">CHOOSE A CITY</string>
+    <string name="welcome">Welcome</string>
+</resources>
