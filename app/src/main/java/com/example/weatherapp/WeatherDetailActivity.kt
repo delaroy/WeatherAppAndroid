@@ -107,7 +107,6 @@ class WeatherDetailActivity: AppCompatActivity() {
             if (checkedButtonId != NO_ID) {
                 val checkedButton = findViewById<MaterialButton>(checkedButtonId)
                 val buttonText = checkedButton.text.toString()
-                Toast.makeText(this, buttonText, Toast.LENGTH_SHORT).show()
                 if (buttonText.lowercase() == "c") {
                     searchWeather(
                         latitude = latitude,
