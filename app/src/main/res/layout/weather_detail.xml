@@ -37,42 +37,44 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <com.google.android.material.button.MaterialButtonToggleGroup
-                    android:id="@+id/toggleButton"
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimens_16"
+                app:singleSelection="true"
+                android:layout_marginTop="@dimen/dimens_4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title" >
+                <Button
+                    android:id="@+id/celsius"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/dimens_16"
-                    app:singleSelection="true"
-                    app:layout_constraintBottom_toBottomOf="@+id/title"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/title">
-                    <Button
-                        android:id="@+id/celsius"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/c"
-                        style="?attr/materialButtonOutlinedStyle"
-                        />
-                    <Button
-                        android:id="@+id/fahrenheit"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/f"
-                        style="?attr/materialButtonOutlinedStyle"
-                        />
-                </com.google.android.material.button.MaterialButtonToggleGroup>
+                    android:text="@string/c"
+                    style="?attr/materialButtonOutlinedStyle"
+                    />
+                <Button
+                    android:id="@+id/fahrenheit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f"
+                    style="?attr/materialButtonOutlinedStyle"
+                    />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView
                 android:id="@+id/weather_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/sun"
-                android:layout_marginTop="@dimen/dimens_48"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="@dimen/dimens_32"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title" />
+                app:layout_constraintTop_toBottomOf="@+id/toggleButton" />
 
             <TextView
                 android:id="@+id/weather_type"
