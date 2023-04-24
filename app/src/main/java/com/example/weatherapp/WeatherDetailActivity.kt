@@ -1,10 +1,12 @@
 package com.example.weatherapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.View.NO_ID
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
@@ -30,6 +32,7 @@ class WeatherDetailActivity: AppCompatActivity() {
     private var materialButtonToggleGroup: MaterialButtonToggleGroup? = null
 
     private var metricValue = ""
+    var errorDialog: AlertDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,9 +66,9 @@ class WeatherDetailActivity: AppCompatActivity() {
                     binding.weatherType.text = resp?.weather?.get(0)?.main
                     val degree = 0x00B0.toChar()
                     if (metricValue == "metric") {
-                        binding.temp.text = resp?.main?.temp.toString() + degree + "C"
+                        binding.temp.text = String.format("%.2f", resp?.main?.temp) + degree + "C"
                     } else if (metricValue == "imperial") {
-                        binding.temp.text = resp?.main?.temp.toString() + degree + "F"
+                        binding.temp.text = String.format("%.2f", resp?.main?.temp) + degree + "F"
                     }
                     binding.minTempTxt.text = resp?.main?.tempMin.toString()
                     binding.maxTempTxt.text = resp?.main?.tempMax.toString()
@@ -89,6 +92,7 @@ class WeatherDetailActivity: AppCompatActivity() {
                     it.message?.let { message ->
                         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
                     }
+                    alert()
                 }
                 is Resource.Loading -> {
                     progressDialog.start(title = "fetching...")
@@ -129,5 +133,26 @@ class WeatherDetailActivity: AppCompatActivity() {
             appid = API_KEY,
             units = units
         )
+    }
+
+    private fun alert() {
+        if( errorDialog != null && errorDialog!!.isShowing) return
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle( "Not found")
+        builder.setMessage("Sorry we could not find the city\n" +
+                "Please try again with correct entry")
+
+        //performing positive action
+        builder.setPositiveButton("OK"){dialogInterface, which ->
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        // Create the AlertDialog
+        errorDialog = builder.create()
+        // Set other dialog properties
+        errorDialog?.setCancelable(false)
+        errorDialog?.show()
     }
 }

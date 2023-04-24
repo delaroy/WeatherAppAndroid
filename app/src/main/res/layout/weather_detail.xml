@@ -50,33 +50,18 @@
                         android:id="@+id/celsius"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="C"
+                        android:text="@string/c"
                         style="?attr/materialButtonOutlinedStyle"
                         />
                     <Button
                         android:id="@+id/fahrenheit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="F"
+                        android:text="@string/f"
                         style="?attr/materialButtonOutlinedStyle"
                         />
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
-                <Switch
-                    android:id="@+id/mySwitch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:layout_centerHorizontal="true"
-                    android:textOff="F"
-                    android:textOn="C"
-                    android:visibility="gone"
-                    android:layout_marginEnd="@dimen/dimens_16"
-                    android:thumb="@drawable/customswitchselector"
-                    android:track="@drawable/custom_track"
-                    app:layout_constraintBottom_toBottomOf="@+id/title"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/title"
-                    tools:ignore="UseSwitchCompatOrMaterialXml" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView
@@ -103,7 +88,7 @@
                 android:id="@+id/temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="Sunny"
+                tools:text="38C"
                 android:textSize="28sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -115,7 +100,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
-                android:text="DETAILS"
+                android:text="@string/details"
+                android:textSize="12sp"
                 android:layout_marginStart="@dimen/dimens_16"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/temp" />
@@ -133,7 +119,7 @@
                     android:id="@+id/min_temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Min temperature"
+                    android:text="@string/min_temperature"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -174,7 +160,7 @@
                     android:id="@+id/max_temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Max temperature"
+                    android:text="@string/max_temperature"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -215,7 +201,7 @@
                     android:id="@+id/cloud_temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cloud coverage"
+                    android:text="@string/cloud_coverage"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -257,7 +243,7 @@
                     android:id="@+id/lat_temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Latitude"
+                    android:text="@string/latitude"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -298,7 +284,7 @@
                     android:id="@+id/lon_temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Longitude"
+                    android:text="@string/longitude"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -339,7 +325,7 @@
                     android:id="@+id/sun_temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sunrise"
+                    android:text="@string/sunrise"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -380,7 +366,7 @@
                     android:id="@+id/sun_set_temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sunset"
+                    android:text="@string/sunset"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

@@ -8,4 +8,12 @@
     <string name="search_a_location">SEARCH A LOCATION</string>
     <string name="choose_a_city">CHOOSE A CITY</string>
     <string name="welcome">Welcome</string>
+    <string name="c">C</string>
+    <string name="f">F</string>
+    <string name="details">DETAILS</string>
+    <string name="min_temperature">Min temperature</string>
+    <string name="max_temperature">Max temperature</string>
+    <string name="cloud_coverage">Cloud coverage</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="sunset">Sunset</string>
 </resources>

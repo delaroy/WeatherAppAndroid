@@ -48,8 +48,6 @@ class MainActivity : AppCompatActivity(), WeatherAppAdapter.RecyclerViewClickLis
                     val latitude = resp?.get(0)?.lat
                     val longitude = resp?.get(0)?.lon
 
-                    //Toast.makeText(this, "this is lat " + latitude, Toast.LENGTH_SHORT).show()
-
                     val intent = Intent(this, WeatherDetailActivity::class.java)
                     intent.putExtra("lat", latitude)
                     intent.putExtra("lon", longitude)
@@ -87,8 +85,14 @@ class MainActivity : AppCompatActivity(), WeatherAppAdapter.RecyclerViewClickLis
                 intent.putExtra("lon", lon)
                 startActivity(intent)
             }
-
+            reset()
         }
+    }
+
+    private fun reset() {
+        binding.cityField.setText("")
+        binding.latitudeField.setText("")
+        binding.longitudeField.setText("")
     }
 
     override fun clickOnItem(data: String) {
